@@ -11,8 +11,8 @@ data:
         server {
             listen 8080;
             location / {
-                set_by_lua \$my_secret 'return os.getenv("MY_SECRET")';
-                return 200 \$my_secret;
+                set_by_lua \$MY_SECRET 'return os.getenv("MY_SECRET")';
+                return 200 \$MY_SECRET;
             }
         }
     }
