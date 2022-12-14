@@ -41,7 +41,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx
+        image: docker.io/openresty/openresty:1.19.9.1-0-alpine
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
