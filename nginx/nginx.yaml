@@ -41,7 +41,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx
+        image: openresty/openresty:1.19.9.1-0-alpine
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
@@ -50,7 +50,7 @@ spec:
             name: my-nginx
         volumeMounts:
         - name: nginx-conf
-          mountPath: /usr/local/nginx/conf/
+          mountPath: /usr/local/openresty/nginx/conf/
       volumes:
         - name: nginx-conf
           configMap:
