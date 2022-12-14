@@ -21,8 +21,6 @@ kind: Secret
 metadata:
   name: my-nginx
   annotations:
-
-    # Our special annotation to tell AVP where the secrets are
     avp.kubernetes.io/path: "secret/data/my-nginx"
 stringData:  
   MY_SECRET: <password>
@@ -43,7 +41,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: docker.io/openresty/openresty:1.19.9.1-0-alpine
+        image: nginx
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
